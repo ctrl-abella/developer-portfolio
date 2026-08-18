@@ -1,44 +1,60 @@
+"use client";
+
+import Link from "next/link";
+import { FiMenu } from "react-icons/fi";
+import { useState } from "react";
+import Sidebar from "./Sidebar";
+
+
 export default function Navbar(){
-    return(
-        <nav className="w-full sticky top-0 z-50 border-b border-neutral-200 bg-background">
-            <div className="mx-auto flex h-16 w-full items-center justify-between px-6">
-                <a
-                href="/"
-                className="text-lg font-bold tracking-tight text-neutral-950 antialiased"
-                >
-                Franz
-                </a>
+    const [isOpen, setIsOpen] = useState(false);
 
-                <div className="flex items-center gap-8">
-                <a
-                    href="#about"
-                    className="text-sm text-neutral-600 transition-colors hover:text-neutral-950"
-                >
-                    About
-                </a>
 
-                <a
-                    href="#skills"
-                    className="text-sm text-neutral-600 transition-colors hover:text-neutral-950"
-                >
-                    Skills
-                </a>
+    return (
+    <>
+      <header className="w-full border-b border-border bg-background">
+        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+          
+          {/* Logo / Name */}
+          <Link
+            href="/"
+            className="text-lg font-semibold tracking-tight"
+          >
+            Franz Abella
+          </Link>
 
-                <a
-                    href="#projects"
-                    className="text-sm text-neutral-600 transition-colors hover:text-neutral-950"
-                >
-                    Projects
-                </a>
+          {/* Desktop Navigation */}
+          <nav className="hidden items-center gap-8 md:flex">
+           
 
-                <a
-                    href="#contact"
-                    className="text-sm text-neutral-600 transition-colors hover:text-neutral-950"
-                >
-                    Contact
-                </a>
-                </div>
-            </div>
-        </nav>
-    )
+            <Link href="#skills" className="hover:text-muted">
+              Skills
+            </Link>
+
+            <Link href="#projects" className="hover:text-muted">
+              Projects
+            </Link>
+
+            <Link href="#experience" className="hover:text-muted">
+              Experience
+            </Link>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(true)}
+            aria-label="Open navigation menu"
+            className="rounded-md p-2 hover:bg-surface md:hidden"
+          >
+            <FiMenu className="h-6 w-6" />
+          </button>
+        </div>
+      </header>
+
+      <Sidebar
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+      />
+    </>
+  );
 }

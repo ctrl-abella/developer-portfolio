@@ -19,8 +19,8 @@ export default function Hero(){
                 <p className="mt-6 text-justify"> I’m a full-stack developer who enjoys turning ideas into practical web and mobile applications. I’m currently exploring cloud services and AI to build smarter solutions. </p>
                 <p className="mt-6 text-justify"> I work across the stack, from user interfaces to APIs, databases, and backend logic, while continuously improving my skills and exploring new technologies. </p>
                 <div className="mt-6 flex flex-row gap-8 px-1">
-                    <a href="https://github.com/ctrl-abella" className="h-10 flex items-center justify-center gap-2">Github<FiGithub className="h-5 w-5"/></a>
-                    <a href="https://www.linkedin.com/in/franzabella" className="h-10 flex items-center justify-center gap-2">Linkedin<FiLinkedin className="h-5 w-5"/></a>
+                    <a href="https://github.com/ctrl-abella" className="h-10 flex items-center justify-center gap-2 font-bold">Github<FiGithub className="h-5 w-5"/></a>
+                    <a href="https://www.linkedin.com/in/franzabella" className="h-10 flex items-center justify-center gap-2 font-bold">Linkedin<FiLinkedin className="h-5 w-5"/></a>
                 </div>
             </div>
         </div>
