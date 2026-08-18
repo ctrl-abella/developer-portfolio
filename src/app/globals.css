@@ -1,26 +1,88 @@
 @import "tailwindcss";
 
+/* =========================================================
+   Theme
+   ========================================================= */
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #111111;
+
+  --surface: #f5f5f5;
+  --surface-foreground: #111111;
+
+  --border: #e5e5e5;
+
+  --muted: #737373;
+  --muted-foreground: #525252;
+
+  --accent: #111111;
+  --accent-foreground: #ffffff;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #f5f5f5;
+
+    --surface: #171717;
+    --surface-foreground: #f5f5f5;
+
+    --border: #262626;
+
+    --muted: #a3a3a3;
+    --muted-foreground: #d4d4d4;
+
+    --accent: #ffffff;
+    --accent-foreground: #111111;
   }
+}
+
+
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-surface: var(--surface);
+  --color-surface-foreground: var(--surface-foreground);
+
+  --color-border: var(--border);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+  font-family: var(--font-geist-sans);
+
+  margin: 0;
+  padding: 0;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+p {
+  color: #525252;
+}
+
+::selection {
+  background: var(--foreground);
+  color: var(--background);
 }
